@@ -170,7 +170,7 @@ export default function Hero() {
                   src="/images/remax-logo.png"
                   alt="RE/MAX Logo"
                   className="hero-logo-img"
-                  style={{ width: 340, height: 'auto', display: 'block', filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.2))' }}
+                  style={{ width: 420, height: 'auto', display: 'block', filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.2))' }}
                 />
               </motion.div>
             </motion.div>
@@ -203,7 +203,7 @@ export default function Hero() {
             z-index: 50 !important;
           }
           .hero-logo-img { 
-            width: clamp(300px, 80vw, 420px) !important;
+            width: clamp(350px, 92vw, 520px) !important;
             height: auto !important;
           }
           .animate-morph {
