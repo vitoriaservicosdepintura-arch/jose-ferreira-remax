@@ -25,6 +25,8 @@ export default function Hero() {
     return () => el?.removeEventListener('mousemove', onMove);
   }, [mouseX, mouseY]);
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+
   const scrollToNext = () => document.getElementById('autoridade')?.scrollIntoView({ behavior: 'smooth' });
 
   return (
@@ -104,7 +106,7 @@ export default function Hero() {
               <div className="animate-morph" style={{ width: 'min(640px, 55vw)', height: 'min(750px, 80vh)', background: 'linear-gradient(135deg, rgba(0,51,160,0.08), rgba(114,47,55,0.08))' }} />
             </div>
 
-            <motion.div style={{ position: 'relative', zIndex: 10, x: typeof window !== 'undefined' && window.innerWidth > 768 ? mouseX : 0, y: typeof window !== 'undefined' && window.innerWidth > 768 ? mouseY : 0 }}>
+            <motion.div style={{ position: 'relative', zIndex: 10, x: !isMobile ? mouseX : 0, y: !isMobile ? mouseY : 0 }}>
               {/* Decorative ring */}
               <div style={{ position: 'absolute', inset: -16, borderRadius: 24, border: '2px solid #C9A96E', opacity: 0.2 }} />
 
@@ -133,12 +135,13 @@ export default function Hero() {
               {/* Overlapping Logo */}
               <motion.div
                 className="hero-logo-overlap"
-                style={{ position: 'absolute', left: -160, bottom: -60, zIndex: 30 }}
+                style={{ position: 'absolute', left: isMobile ? '50%' : -160, bottom: -60, zIndex: 30 }}
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 animate={{
                   opacity: 1,
                   scale: 1,
                   y: [0, -25, 0],
+                  x: isMobile ? '-50%' : 0,
                   rotate: [0, 3, 0, -3, 0]
                 }}
                 whileHover={{
@@ -196,13 +199,11 @@ export default function Hero() {
           .hero-text-col h1 { font-size: 1.8rem !important; margin-bottom: 16px !important; }
           .hero-text-col p { font-size: 0.9rem !important; margin-left: auto; margin-right: auto; margin-bottom: 16px !important; }
           .hero-logo-overlap { 
-            left: 50% !important; 
-            bottom: -50px !important; 
+            bottom: -60px !important; 
             z-index: 50 !important;
-            transform: translateX(-50%) !important;
           }
           .hero-logo-img { 
-            width: clamp(240px, 65vw, 320px) !important;
+            width: clamp(300px, 80vw, 420px) !important;
             height: auto !important;
           }
           .animate-morph {
