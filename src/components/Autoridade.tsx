@@ -25,9 +25,9 @@ export default function Autoridade() {
   return (
     <section ref={ref} id="autoridade" style={{ background: '#F5F5F0', position: 'relative', overflow: 'hidden', padding: '0' }}>
 
-      {/* Watermark "A" */}
+      {/* Watermark "J" */}
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none', overflow: 'hidden' }} aria-hidden="true">
-        <span className="watermark-am" style={{ color: '#0033A0' }}>A</span>
+        <span className="watermark-am" style={{ color: '#0033A0' }}>J</span>
       </div>
 
       <div className="lines-pattern" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />

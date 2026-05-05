@@ -196,10 +196,10 @@ export default function Hero() {
           .hero-text-col h1 { font-size: 1.8rem !important; margin-bottom: 16px !important; }
           .hero-text-col p { font-size: 0.9rem !important; margin-left: auto; margin-right: auto; margin-bottom: 16px !important; }
           .hero-logo-overlap { 
-            left: 50% !important; 
-            transform: translateX(-50%) !important;
-            bottom: -30px !important; 
+            left: -30px !important; 
+            bottom: -40px !important; 
             z-index: 50 !important;
+            transform: none !important;
           }
           .hero-logo-img { 
             width: clamp(240px, 65vw, 320px) !important;
