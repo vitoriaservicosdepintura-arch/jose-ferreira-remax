@@ -116,7 +116,7 @@ export default function Hero() {
                 <img
                   src="/images/alexandra-hero.png"
                   alt="José Ferreira — Consultor Imobiliário RE/MAX DinâmicaDaire"
-                  style={{ width: '100%', maxHeight: 'min(750px, 80vh)', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+                  style={{ width: '100%', maxHeight: 'min(750px, 80vh)', objectFit: 'cover', objectPosition: 'top', display: 'block', imageRendering: 'auto', filter: 'contrast(1.02) brightness(1.02) saturate(1.05) drop-shadow(0 15px 30px rgba(0,0,0,0.1))' }}
                 />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, background: 'linear-gradient(to top, rgba(114,47,55,0.4), transparent)' }} />
               </motion.div>
@@ -138,8 +138,8 @@ export default function Hero() {
                 animate={{
                   opacity: 1,
                   scale: 1,
-                  y: [0, -15, 0],
-                  rotate: [0, 2, 0, -2, 0]
+                  y: [0, -25, 0],
+                  rotate: [0, 3, 0, -3, 0]
                 }}
                 whileHover={{
                   scale: 1.05,
@@ -196,8 +196,8 @@ export default function Hero() {
           .hero-text-col h1 { font-size: 1.8rem !important; margin-bottom: 16px !important; }
           .hero-text-col p { font-size: 0.9rem !important; margin-left: auto; margin-right: auto; margin-bottom: 16px !important; }
           .hero-logo-overlap { 
-            left: -30px !important; 
-            bottom: -40px !important; 
+            left: -20px !important; 
+            bottom: 60px !important; 
             z-index: 50 !important;
             transform: none !important;
           }
