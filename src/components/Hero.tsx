@@ -32,11 +32,11 @@ export default function Hero() {
       ref={ref}
       id="hero"
       className="bg-hero-gradient"
-      style={{ minHeight: '100vh', height: 'auto', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: 100, paddingBottom: 60, boxSizing: 'border-box' }}
+      style={{ minHeight: '100vh', height: 'auto', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', boxSizing: 'border-box' }}
     >
       {/* Ambient orbs */}
-      <motion.div style={{ position: 'absolute', top: 80, right: 0, width: 600, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,51,160,0.06) 0%, transparent 70%)', pointerEvents: 'none', x: mouseX, y: mouseY }} />
-      <motion.div style={{ position: 'absolute', bottom: 0, left: 0, width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(114,47,55,0.07) 0%, transparent 70%)', pointerEvents: 'none' }} />
+      <motion.div className="ambient-orb" style={{ position: 'absolute', top: 80, right: 0, width: 600, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,51,160,0.06) 0%, transparent 70%)', pointerEvents: 'none', x: mouseX, y: mouseY }} />
+      <motion.div className="ambient-orb" style={{ position: 'absolute', bottom: 0, left: 0, width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(114,47,55,0.07) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
       {/* Dots */}
       <div className="dots-pattern" style={{ position: 'absolute', inset: 0, opacity: 0.4, pointerEvents: 'none' }} />
@@ -187,22 +187,29 @@ export default function Hero() {
       </div>
 
       <style>{`
+        #hero { padding-top: 100px; padding-bottom: 60px; }
         @media (max-width: 768px) {
-          .hero-grid-main { grid-template-columns: 1fr !important; gap: 32px !important; }
-          .hero-photo-col { order: -1; min-height: 520px; padding-top: 20px; position: relative; }
-          .hero-text-col  { order: 1; text-align: center; align-items: center; padding: 20px !important; }
-          .hero-text-col h1 { font-size: 1.8rem !important; }
-          .hero-text-col p { font-size: 0.9rem !important; margin-left: auto; margin-right: auto; }
+          #hero { padding-top: 60px !important; padding-bottom: 40px !important; }
+          .hero-grid-main { grid-template-columns: 1fr !important; gap: 20px !important; }
+          .hero-photo-col { order: -1; min-height: auto !important; padding-top: 0 !important; margin-bottom: 20px; }
+          .hero-text-col  { order: 1; text-align: center; align-items: center; padding: 0 !important; }
+          .hero-text-col h1 { font-size: 1.8rem !important; margin-bottom: 16px !important; }
+          .hero-text-col p { font-size: 0.9rem !important; margin-left: auto; margin-right: auto; margin-bottom: 16px !important; }
           .hero-logo-overlap { 
-            left: 0 !important; 
-            bottom: -50px !important; 
+            left: 50% !important; 
+            transform: translateX(-50%) !important;
+            bottom: -30px !important; 
             z-index: 50 !important;
           }
           .hero-logo-img { 
-            width: clamp(280px, 72vw, 400px) !important;
+            width: clamp(240px, 65vw, 320px) !important;
             height: auto !important;
-            filter: drop-shadow(0 12px 28px rgba(0,0,0,0.3)) !important;
           }
+          .animate-morph {
+            width: 80vw !important;
+            height: 80vw !important;
+          }
+          .ambient-orb { display: none; }
         }
       `}</style>
     </section>
