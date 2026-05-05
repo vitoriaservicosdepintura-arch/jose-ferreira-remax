@@ -55,6 +55,12 @@ export default function Footer() {
                   bg: 'rgba(0,51,160,0.1)', color: '#0033A0'
                 },
                 {
+                  icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" /><path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>,
+                  href: 'https://www.instagram.com/joseamericodamoita/',
+                  text: '@joseamericodamoita',
+                  bg: 'rgba(114,47,55,0.15)', color: '#C9A96E',
+                },
+                {
                   icon: <Globe size={13} />,
                   href: 'https://remax.pt/pt/agente/jose-ferreira/126421023',
                   text: 'Perfil RE/MAX',
