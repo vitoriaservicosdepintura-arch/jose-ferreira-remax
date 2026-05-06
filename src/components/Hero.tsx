@@ -46,6 +46,16 @@ export default function Hero() {
 
 
       <div style={{ maxWidth: 1300, margin: '0 auto', padding: '0 24px', width: '100%', position: 'relative', zIndex: 10 }}>
+        {/* Mobile Top Logo */}
+        {isMobile && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            style={{ display: 'flex', justifyContent: 'center', marginBottom: 20 }}
+          >
+            <img src="/images/LOGO2-sem-fundo.png" alt="Equipa Imobiliária" style={{ width: 180, height: 'auto' }} />
+          </motion.div>
+        )}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 40, alignItems: 'center' }} className="hero-grid-main">
 
           {/* LEFT */}
@@ -120,6 +130,14 @@ export default function Hero() {
                   alt="José Ferreira — Consultor Imobiliário RE/MAX DinâmicaDaire"
                   style={{ width: '100%', maxHeight: 'min(750px, 80vh)', objectFit: 'cover', objectPosition: 'top', display: 'block', imageRendering: 'auto', filter: 'contrast(1.02) brightness(1.02) saturate(1.05) drop-shadow(0 15px 30px rgba(0,0,0,0.1))' }}
                 />
+
+                {/* Mobile Inner Bottom Logo */}
+                {isMobile && (
+                  <div style={{ position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)', width: '80%', zIndex: 20 }}>
+                    <img src="/images/LOGO2-sem-fundo.png" alt="Equipa Imobiliária" style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 5px 15px rgba(0,0,0,0.3))' }} />
+                  </div>
+                )}
+
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, background: 'linear-gradient(to top, rgba(114,47,55,0.4), transparent)' }} />
               </motion.div>
 
@@ -192,23 +210,26 @@ export default function Hero() {
       <style>{`
         #hero { padding-top: 100px; padding-bottom: 60px; }
         @media (max-width: 768px) {
-          #hero { padding-top: 60px !important; padding-bottom: 40px !important; }
-          .hero-grid-main { grid-template-columns: 1fr !important; gap: 20px !important; }
-          .hero-photo-col { order: -1; min-height: auto !important; padding-top: 0 !important; margin-bottom: 20px; }
+          #hero { padding-top: 40px !important; padding-bottom: 20px !important; }
+          .hero-grid-main { grid-template-columns: 1fr !important; gap: 10px !important; }
+          .hero-photo-col { order: -1; min-height: auto !important; padding-top: 0 !important; margin-bottom: 10px; }
           .hero-text-col  { order: 1; text-align: center; align-items: center; padding: 0 !important; }
-          .hero-text-col h1 { font-size: 1.8rem !important; margin-bottom: 16px !important; }
-          .hero-text-col p { font-size: 0.9rem !important; margin-left: auto; margin-right: auto; margin-bottom: 16px !important; }
+          .hero-text-col h1 { font-size: 1.9rem !important; margin-bottom: 12px !important; line-height: 1.2 !important; }
+          .hero-text-col p { font-size: 0.85rem !important; margin-left: auto; margin-right: auto; margin-bottom: 12px !important; display: none; }
+          .hero-text-col .btn-primary { display: none; }
           .hero-logo-overlap { 
-            bottom: -60px !important; 
-            z-index: 50 !important;
+            bottom: 20% !important; 
+            z-index: 5 !important;
+            opacity: 0.2 !important;
           }
           .hero-logo-img { 
-            width: clamp(380px, 98vw, 580px) !important;
+            width: 80vw !important;
             height: auto !important;
           }
           .animate-morph {
-            width: 80vw !important;
-            height: 80vw !important;
+            width: 90vw !important;
+            height: 90vw !important;
+            opacity: 0.5 !important;
           }
           .ambient-orb { display: none; }
         }
