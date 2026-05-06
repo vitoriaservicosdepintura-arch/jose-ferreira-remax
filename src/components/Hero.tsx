@@ -82,8 +82,8 @@ export default function Hero() {
 
             {/* CTA */}
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.8 }} style={{ marginBottom: 16 }}>
-              <motion.a href="tel:+351968211120" className="btn-primary" style={{ padding: '12px 24px', fontSize: '0.8rem' }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-                <Phone size={16} /> FALAR COM A ALEXANDRA AGORA
+              <motion.a href="tel:+351966425721" className="btn-primary" style={{ padding: '12px 24px', fontSize: '0.8rem' }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+                <Phone size={16} /> FALAR COM O JOSÉ AGORA
               </motion.a>
             </motion.div>
 

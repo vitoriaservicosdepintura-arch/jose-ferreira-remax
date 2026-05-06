@@ -1,8 +1,8 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const WA_NUMBER = '351968211120';
-const WA_MESSAGE = 'Olá Alexandra! 👋 Vim pelo site e gostaria de saber mais informações.';
+const WA_NUMBER = '351966425721';
+const WA_MESSAGE = 'Olá José! 👋 Vim pelo site e gostaria de saber mais informações.';
 const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
 
 export default function WhatsAppFloat() {
@@ -57,7 +57,7 @@ export default function WhatsAppFloat() {
                             <div style={{ position: 'relative', flexShrink: 0 }}>
                                 <img
                                     src="/images/alexandra-hero.png"
-                                    alt="Alexandra Moreira"
+                                    alt="José Ferreira"
                                     style={{
                                         width: 56,
                                         height: 56,
@@ -90,7 +90,7 @@ export default function WhatsAppFloat() {
                                     margin: 0,
                                     lineHeight: 1.3,
                                 }}>
-                                    Alexandra Moreira
+                                    José Ferreira
                                 </p>
                                 <p style={{
                                     fontFamily: 'Open Sans, sans-serif',
@@ -107,7 +107,7 @@ export default function WhatsAppFloat() {
                                     color: 'rgba(255,255,255,0.5)',
                                     margin: 0,
                                 }}>
-                                    +351 968 211 120
+                                    +351 966 425 721
                                 </p>
                             </div>
                         </motion.div>

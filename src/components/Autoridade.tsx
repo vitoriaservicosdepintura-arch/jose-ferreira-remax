@@ -82,12 +82,12 @@ export default function Autoridade() {
               <motion.div style={{ overflow: 'hidden', borderRadius: 20, maxWidth: 480, boxShadow: '0 25px 70px rgba(0,0,0,0.18)', position: 'relative', zIndex: 3 }} whileHover={{ scale: 1.02 }} transition={{ duration: 0.4 }}>
                 <img
                   src="/images/alexandra.png"
-                  alt="Alexandra Moreira"
+                  alt="José Ferreira"
                   style={{ width: '100%', maxHeight: 650, objectFit: 'cover', objectPosition: 'top', display: 'block' }}
                 />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '32px 24px', background: 'linear-gradient(to top, rgba(114,47,55,0.95) 0%, transparent 100%)' }}>
-                  <p style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, color: '#fff', fontSize: '1rem', margin: 0 }}>Alexandra Moreira</p>
-                  <p style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.8)', margin: '4px 0 0' }}>Consultora Imobiliária · RE/MAX DinâmicaDaire</p>
+                  <p style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, color: '#fff', fontSize: '1rem', margin: 0 }}>José Ferreira (Zeca)</p>
+                  <p style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.8)', margin: '4px 0 0' }}>Consultor Imobiliário · RE/MAX DinâmicaDaire</p>
                 </div>
               </motion.div>
 
@@ -101,7 +101,7 @@ export default function Autoridade() {
               initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay: 0.1 }}
               style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 900, fontSize: 'clamp(1.8rem, 3vw, 2.8rem)', color: '#0033A0', lineHeight: 1.15, marginBottom: 20 }}
             >
-              Por Que Pode <span style={{ color: '#722F37' }}>Confiar</span> em Mim?
+              Por Que Pode <span style={{ color: '#722F37' }}>Confiar</span> em Nós?
             </motion.h2>
 
             <motion.div
@@ -114,7 +114,7 @@ export default function Autoridade() {
               initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.4 }}
               style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.92rem', color: '#555', lineHeight: 1.8, marginBottom: 32 }}
             >
-              Sou a <strong style={{ color: '#722F37' }}>Alexandra Moreira</strong>, consultora imobiliária na RE/MAX DinâmicaDaire,
+              Sou o <strong style={{ color: '#722F37' }}>José Ferreira (Zeca)</strong>, consultor imobiliária na RE/MAX DinâmicaDaire,
               e faço parte da <strong style={{ color: '#0033A0' }}>Equipa José Ferreira & Alexandra Moreira</strong>.
             </motion.p>
 

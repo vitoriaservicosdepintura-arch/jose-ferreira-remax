@@ -100,7 +100,7 @@ export default function Navbar() {
                 </button>
               ))}
               <motion.a
-                href="tel:+351968211120"
+                href="tel:+351966425721"
                 className="btn-primary"
                 style={{ padding: '10px 22px', fontSize: '0.78rem', borderRadius: 4 }}
                 whileHover={{ scale: 1.05 }}
@@ -154,7 +154,7 @@ export default function Navbar() {
               </button>
             ))}
             <a
-              href="tel:+351968211120"
+              href="tel:+351966425721"
               style={{
                 display: 'block', marginTop: 20,
                 background: '#DA291C', color: '#fff', textAlign: 'center',
