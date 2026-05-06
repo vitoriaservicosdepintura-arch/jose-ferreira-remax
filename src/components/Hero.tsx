@@ -99,8 +99,11 @@ export default function Hero() {
             </div>
 
             <motion.div style={{ position: 'relative', zIndex: 10 }} className="hero-inner-wrapper">
-              {/* Decorative ring */}
-              <div style={{ position: 'absolute', inset: -16, borderRadius: 24, border: '2px solid #C9A96E', opacity: 0.2 }} />
+              {/* Decorative ring — hidden on mobile */}
+              <div
+                className="hero-decorative-ring"
+                style={{ position: 'absolute', inset: -16, borderRadius: 24, border: '2px solid #C9A96E', opacity: 0.2 }}
+              />
 
               {/* Photo */}
               <motion.div
@@ -119,9 +122,9 @@ export default function Hero() {
                   className="hero-mobile-logo"
                   animate={{ y: [0, -10, 0], rotate: [0, 2, 0, -2, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                  style={{ position: 'absolute', bottom: -30, left: '50%', x: '-50%', width: '90%', zIndex: 40, display: 'none' }}
+                  style={{ position: 'absolute', bottom: -15, left: '50%', x: '-50%', width: '85%', zIndex: 40, display: 'none' }}
                 >
-                  <img src="/images/remax-logo.png" alt="RE/MAX" style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 15px 35px rgba(0,0,0,0.3))' }} />
+                  <img src="/images/LOGO2-sem-fundo.png" alt="Equipa Imobiliária" style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 15px 35px rgba(0,0,0,0.3))' }} />
                 </motion.div>
 
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, background: 'linear-gradient(to top, rgba(114,47,55,0.4), transparent)' }} />
@@ -182,6 +185,7 @@ export default function Hero() {
 
         {/* Scroll indicator */}
         <motion.div
+          className="hero-scroll-indicator"
           style={{ position: 'absolute', bottom: 32, left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, cursor: 'pointer' }}
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
           onClick={scrollToNext}
@@ -200,27 +204,30 @@ export default function Hero() {
 
         @media (max-width: 768px) {
           #hero { 
-            padding-top: 70px !important; 
-            padding-bottom: 20px !important; 
+            padding-top: 80px !important; 
+            padding-bottom: 40px !important; 
             min-height: 100dvh !important; 
             height: auto !important; 
-            display: flex;
-            align-items: center;
+            display: block !important;
           }
-          .hero-grid-main { grid-template-columns: 1fr !important; gap: 0px !important; width: 100%; margin-top: -30px; }
-          .hero-photo-col { order: -1; min-height: auto !important; padding-top: 0 !important; margin-bottom: 30px !important; }
-          .hero-main-img { max-height: 48dvh !important; border-radius: 12px; }
-          .hero-text-col  { order: 1; text-align: center; align-items: center; padding: 0 !important; }
-          .hero-text-col h1 { font-size: 1.55rem !important; margin-bottom: 0px !important; line-height: 1.15 !important; }
-          .hero-text-col p { font-size: 0.85rem !important; margin-left: auto; margin-right: auto; margin-bottom: 12px !important; display: none; }
-          .hero-text-col .btn-primary { display: none; }
+          .hero-grid-main { grid-template-columns: 1fr !important; gap: 0px !important; width: 100%; margin-top: 0; }
+          .hero-photo-col { order: -1; min-height: auto !important; padding-top: 0 !important; margin-bottom: 60px !important; }
+          .hero-main-img { max-height: 65dvh !important; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15) !important; width: 92% !important; margin: 0 auto; }
+          .hero-text-col { order: 1; text-align: center; align-items: center; padding: 0 20px 60px 20px !important; y: 0 !important; opacity: 1 !important; }
+          .hero-text-col h1 { font-size: 1.8rem !important; margin-bottom: 20px !important; line-height: 1.2 !important; padding: 0 10px; }
+          .hero-text-col p { font-size: 0.95rem !important; margin-left: auto; margin-right: auto; margin-bottom: 24px !important; display: block !important; opacity: 1 !important; color: #555 !important; }
+          .hero-text-col .btn-primary { display: inline-flex !important; padding: 16px 32px !important; font-size: 0.9rem !important; margin-top: 10px; }
+          
+          .hero-decorative-ring { display: none !important; }
+          .hero-scroll-indicator { bottom: 20px !important; }
+
           /* Hide desktop logo, show mobile logo */
           .hero-logo-overlap { display: none !important; }
           .hero-mobile-logo { display: block !important; }
           .animate-morph {
-            width: 90vw !important;
-            height: 90vw !important;
-            opacity: 0.5 !important;
+            width: 100vw !important;
+            height: 100vw !important;
+            opacity: 0.3 !important;
           }
           .ambient-orb { display: none; }
         }

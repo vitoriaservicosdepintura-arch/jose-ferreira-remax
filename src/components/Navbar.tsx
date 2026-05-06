@@ -65,14 +65,14 @@ export default function Navbar() {
               transition={{ type: 'spring', stiffness: 300 }}
             >
               <img
-                src="/images/remax-logo.png"
-                alt="RE/MAX"
+                src="/images/LOGO2-sem-fundo.png"
+                alt="Equipa Imobiliária"
                 className="navbar-logo-img"
                 style={{
-                  height: scrolled ? 110 : 150,
+                  height: scrolled ? 60 : 75,
                   width: 'auto',
                   objectFit: 'contain',
-                  filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.25))',
+                  filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.15))',
                   transition: 'all 0.4s ease'
                 }}
               />
@@ -172,7 +172,7 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .desktop-nav  { display: none !important; }
           .mobile-burger{ display: block !important; }
-          .navbar-logo-img { height: ${scrolled ? '50px' : '55px'} !important; }
+          .navbar-logo-img { height: 42px !important; }
           .navbar-logo-container { position: relative !important; left: 0 !important; }
           .fixed-container { padding: 0 16px !important; height: ${scrolled ? '60px' : '72px'} !important; }
         }
