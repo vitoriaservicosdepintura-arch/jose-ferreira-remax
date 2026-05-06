@@ -101,7 +101,7 @@ export default function Footer() {
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
             <img src="/images/remax-balloon.png" alt="RE/MAX" style={{ height: 54, width: 'auto', objectFit: 'contain', opacity: 0.6, filter: 'brightness(1.2)' }} />
-            <img src="/images/LOGO2-sem-fundo.png" alt="Equipa Imobiliária" style={{ height: 48, width: 'auto', objectFit: 'contain', filter: 'brightness(1.1)' }} />
+            <img src="/images/remax-logo.png" alt="Equipa Imobiliária" style={{ height: 48, width: 'auto', objectFit: 'contain', filter: 'brightness(1.1)' }} />
           </div>
         </motion.div>
       </div>

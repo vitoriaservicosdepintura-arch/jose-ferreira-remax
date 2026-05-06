@@ -54,7 +54,7 @@ export default function Hero() {
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             style={{ display: 'flex', justifyContent: 'center', marginBottom: 15 }}
           >
-            <img src="/images/LOGO2-sem-fundo.png" alt="RE/MAX" style={{ width: 220, height: 'auto', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.1))' }} />
+            <img src="/images/remax-logo.png" alt="RE/MAX" style={{ width: 220, height: 'auto', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.1))' }} />
           </motion.div>
         )}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 40, alignItems: 'center' }} className="hero-grid-main">
@@ -139,7 +139,7 @@ export default function Hero() {
                     transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
                     style={{ position: 'absolute', bottom: -30, left: '50%', transform: 'translateX(-50%)', width: '90%', zIndex: 40 }}
                   >
-                    <img src="/images/LOGO2-sem-fundo.png" alt="RE/MAX" style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 15px 35px rgba(0,0,0,0.3))' }} />
+                    <img src="/images/remax-logo.png" alt="RE/MAX" style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 15px 35px rgba(0,0,0,0.3))' }} />
                   </motion.div>
                 )}
 
@@ -190,7 +190,7 @@ export default function Hero() {
                   }}
                 >
                   <img
-                    src="/images/LOGO2-sem-fundo.png"
+                    src="/images/remax-logo.png"
                     alt="RE/MAX Logo"
                     className="hero-logo-img"
                     style={{ width: 300, height: 'auto', display: 'block', filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.2))' }}
