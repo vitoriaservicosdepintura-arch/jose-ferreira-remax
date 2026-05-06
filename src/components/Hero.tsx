@@ -118,7 +118,7 @@ export default function Hero() {
                   className="hero-mobile-logo"
                   animate={{ y: [0, -15, 0], rotate: [0, 2, 0, -2, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                  style={{ position: 'absolute', bottom: -30, left: '50%', transform: 'translateX(-50%)', width: '90%', zIndex: 40, display: 'none' }}
+                  style={{ position: 'absolute', bottom: -40, left: '50%', x: '-50%', width: '75%', maxWidth: 250, zIndex: 40, display: 'none' }}
                 >
                   <img src="/images/remax-logo.png" alt="RE/MAX" style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 15px 35px rgba(0,0,0,0.3))' }} />
                 </motion.div>
@@ -138,7 +138,7 @@ export default function Hero() {
               {/* Overlapping Logo — Desktop only, hidden on mobile via CSS */}
               <motion.div
                 className="hero-logo-overlap"
-                style={{ position: 'absolute', left: -160, bottom: -60, zIndex: 30 }}
+                style={{ position: 'absolute', left: '50%', bottom: -60, x: '-50%', zIndex: 30 }}
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 animate={{
                   opacity: 1,
