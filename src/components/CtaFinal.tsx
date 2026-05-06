@@ -31,9 +31,9 @@ export default function CtaFinal() {
 
     const interestText = categoryIcons[selectedCategory] || selectedCategory.toUpperCase();
 
-    const message = `🚀 *NOVA SOLICITAÇÃO RECEBIDA*%0A%0AOlá José! 👋%0A%0AVim pelo site: *joseferreira-remax.vercel.app*%0A%0A━━━━━━━━━━━━━━━%0A*👤 DADOS DO CLIENTE:*%0A━━━━━━━━━━━━━━━%0A🪪 *Nome:* ${name}%0A📧 *Email:* ${email}%0A📞 *Telefone:* ${phone}%0A%0A━━━━━ *INTERESSE* ━━━━━%0A📌 ${interestText}%0A━━━━━━━━━━━━━━━%0A✨ _Aguardando resposta..._`;
+    const message = `Olá Alexandra! 👋%0A%0AVim pelo site: *alexandraconsultoraremax.vercel.app*%0A%0A*Dados do Cliente:*%0A👤 Nome: ${name}%0A📧 Email: ${email}%0A📞 Telefone: ${phone}%0A%0A*Interesse:*%0A📌 ${interestText}`;
 
-    window.open(`https://wa.me/351966425721?text=${message}`, '_blank');
+    window.open(`https://wa.me/351968211120?text=${message}`, '_blank');
   };
 
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
@@ -118,11 +118,11 @@ export default function CtaFinal() {
               className="contact-info-grid-small"
             >
               {[
-                { icon: <Phone size={14} />, label: 'Telefone', value: '+351 966 425 721', href: 'tel:+351966425721', hColor: '#25D366' },
-                { icon: <Mail size={14} />, label: 'Email', value: 'jam.ferreira@remax.pt', href: 'mailto:jam.ferreira@remax.pt', hColor: '#0033A0' },
-                { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>, label: 'Facebook', value: 'Equipa Facebook', href: 'https://www.facebook.com/zeca.ferreira.3', hColor: '#1877F2' },
-                { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" /><path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>, label: 'Instagram', value: '@joseamericodamoita', href: 'https://www.instagram.com/joseamericodamoita/', hColor: '#E1306C' },
-                { icon: <Globe size={14} />, label: 'Website', value: 'Perfil RE/MAX', href: 'https://remax.pt/pt/agente/jose-ferreira/126421023', hColor: '#C9A96E' },
+                { icon: <Phone size={14} />, label: 'Telefone', value: '+351 968 211 120', href: 'tel:+351968211120', hColor: '#25D366' },
+                { icon: <Mail size={14} />, label: 'Email', value: 'alexandramoreira@remax.pt', href: 'mailto:alexandramoreira@remax.pt', hColor: '#0033A0' },
+                { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" /><path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>, label: 'Instagram', value: '@alexandramoreira_remax', href: 'https://instagram.com/alexandramoreira_remax', hColor: '#E1306C' },
+                { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>, label: 'Facebook', value: 'Equipa Facebook', href: 'https://www.facebook.com/profile.php?id=61556151421865', hColor: '#1877F2' },
+                { icon: <Globe size={14} />, label: 'Website', value: 'Perfil RE/MAX', href: 'https://remax.pt/pt/agente/alexandra-moreira/126421025', hColor: '#C9A96E' },
               ].map((c, i) => (
                 <a key={i} href={c.href} target={c.href.startsWith('http') || c.href.startsWith('mailto:') ? '_blank' : undefined} rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'flex-start', gap: 10, textDecoration: 'none' }}>
                   <motion.div
@@ -206,9 +206,9 @@ export default function CtaFinal() {
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  style={{ marginTop: 8, padding: '16px', borderRadius: 12, background: 'linear-gradient(90deg, #0033A0, #001a6b)', color: '#fff', fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '0.9rem', border: 'none', cursor: 'pointer', boxShadow: '0 10px 20px rgba(0,0,0,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}
+                  style={{ marginTop: 8, padding: '16px', borderRadius: 12, background: 'linear-gradient(90deg, #0033A0, #001a6b)', color: '#fff', fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '0.9rem', border: 'none', cursor: 'pointer', boxShadow: '0 10px 20px rgba(0,0,0,0.2)' }}
                 >
-                  <MessageCircle size={20} /> ENVIAR SOLICITAÇÃO
+                  ENVIAR SOLICITAÇÃO
                 </motion.button>
               </form>
             </div>

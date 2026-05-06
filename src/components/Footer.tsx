@@ -17,7 +17,7 @@ export default function Footer() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
             <img src="/images/remax-logo.png" alt="RE/MAX DinâmicaDaire" className="footer-logo-main" style={{ height: 100, width: 'auto', objectFit: 'contain', marginBottom: 24, filter: 'brightness(1.2)' }} />
             <p style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.7, margin: 0 }}>
-              Equipa José Ferreira e Alexandra Moreira — comprometida com a excelência no mercado imobiliário.
+              Equipa José Ferreira & Alexandra Moreira — comprometida com a excelência no mercado imobiliário.
             </p>
           </motion.div>
 
@@ -25,7 +25,7 @@ export default function Footer() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}>
             <h4 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginBottom: 20 }}>Navegação</h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-              {[['hero', 'Início'], ['autoridade', 'Sobre o José'], ['servicos', 'Serviços'], ['contacto', 'Contacto']].map(([id, label]) => (
+              {[['hero', 'Início'], ['autoridade', 'Sobre a Alexandra'], ['servicos', 'Serviços'], ['contacto', 'Contacto']].map(([id, label]) => (
                 <li key={id}>
                   <a
                     href={`#${id}`}
@@ -46,23 +46,23 @@ export default function Footer() {
             <h4 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: '0.72rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginBottom: 20 }}>Contactos</h4>
             <ul className="footer-contacts-grid" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px 24px' }}>
               {[
-                { icon: <Phone size={13} />, href: 'tel:+351966425721', text: '+351 966 425 721', bg: 'rgba(218,41,28,0.15)', color: '#DA291C' },
-                { icon: <Mail size={13} />, href: 'mailto:jam.ferreira@remax.pt', text: 'jam.ferreira@remax.pt', bg: 'rgba(0,51,160,0.15)', color: '#0033A0' },
+                { icon: <Phone size={13} />, href: 'tel:+351968211120', text: '+351 968 211 120', bg: 'rgba(218,41,28,0.15)', color: '#DA291C' },
+                { icon: <Mail size={13} />, href: 'mailto:alexandramoreira@remax.pt', text: 'alexandramoreira@remax.pt', bg: 'rgba(0,51,160,0.15)', color: '#0033A0' },
+                {
+                  icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" /><path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>,
+                  href: 'https://instagram.com/alexandramoreira_remax',
+                  text: '@alexandramoreira_remax',
+                  bg: 'rgba(114,47,55,0.15)', color: '#C9A96E',
+                },
                 {
                   icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>,
-                  href: 'https://www.facebook.com/zeca.ferreira.3',
+                  href: 'https://www.facebook.com/profile.php?id=61556151421865',
                   text: 'Facebook Equipa',
                   bg: 'rgba(0,51,160,0.1)', color: '#0033A0'
                 },
                 {
-                  icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" /><path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>,
-                  href: 'https://www.instagram.com/joseamericodamoita/',
-                  text: '@joseamericodamoita',
-                  bg: 'rgba(114,47,55,0.15)', color: '#C9A96E',
-                },
-                {
                   icon: <Globe size={13} />,
-                  href: 'https://remax.pt/pt/agente/jose-ferreira/126421023',
+                  href: 'https://remax.pt/pt/agente/alexandra-moreira/126421025',
                   text: 'Perfil RE/MAX',
                   bg: 'rgba(201,169,110,0.1)', color: '#C9A96E'
                 },
@@ -97,11 +97,11 @@ export default function Footer() {
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 28, borderTop: '1px solid rgba(255,255,255,0.06)', flexWrap: 'wrap', gap: 24 }}
         >
           <p style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.25)', margin: 0 }}>
-            © {new Date().getFullYear()} RE/MAX DinâmicaDaire · Equipa José Ferreira e Alexandra Moreira. Todos os direitos reservados.
+            © {new Date().getFullYear()} RE/MAX DinâmicaDaire · Equipa José Ferreira & Alexandra Moreira. Todos os direitos reservados.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
             <img src="/images/remax-balloon.png" alt="RE/MAX" style={{ height: 54, width: 'auto', objectFit: 'contain', opacity: 0.6, filter: 'brightness(1.2)' }} />
-            <img src="/images/remax-logo.png" alt="Equipa Imobiliária" style={{ height: 48, width: 'auto', objectFit: 'contain', filter: 'brightness(1.1)' }} />
+            <img src="/images/LOGO2-sem-fundo.png" alt="Equipa Imobiliária" style={{ height: 48, width: 'auto', objectFit: 'contain', filter: 'brightness(1.1)' }} />
           </div>
         </motion.div>
       </div>

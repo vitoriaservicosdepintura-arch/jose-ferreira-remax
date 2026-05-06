@@ -4,10 +4,10 @@ import { useInView } from 'react-intersection-observer';
 import { TrendingUp, Home, Eye, Handshake } from 'lucide-react';
 
 const metrics = [
-  { icon: <Home size={20} />, label: 'Imóveis Ativos', value: '47', suffix: '', change: '+12%', up: true },
-  { icon: <Eye size={20} />, label: 'Visitas Realizadas', value: '320', suffix: '+', change: '+28%', up: true },
-  { icon: <TrendingUp size={20} />, label: 'Valor Médio', value: '285K', suffix: '€', change: '+8%', up: true },
-  { icon: <Handshake size={20} />, label: 'Negócios Fechados', value: '98', suffix: '%', change: 'Satisfação', up: true },
+  { icon: <Home size={20} />,      label: 'Imóveis Ativos',    value: '47',   suffix: '',  change: '+12%',     up: true },
+  { icon: <Eye size={20} />,       label: 'Visitas Realizadas', value: '320',  suffix: '+', change: '+28%',     up: true },
+  { icon: <TrendingUp size={20} />,label: 'Valor Médio',       value: '285K', suffix: '€', change: '+8%',      up: true },
+  { icon: <Handshake size={20} />, label: 'Negócios Fechados', value: '98',   suffix: '%', change: 'Satisfação',up: true },
 ];
 
 function DashCard({ icon, label, value, suffix, change, delay, inView }: { icon: React.ReactNode; label: string; value: string; suffix: string; change: string; delay: number; inView: boolean }) {
@@ -68,8 +68,8 @@ export default function Dashboard3D() {
   const [sectionRef, inView] = useInView({ triggerOnce: true, threshold: 0.08 });
 
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
-  const y1 = useTransform(scrollYProgress, [0, 1], ['-4%', '4%']);
-  const y2 = useTransform(scrollYProgress, [0, 1], ['4%', '-4%']);
+  const y1  = useTransform(scrollYProgress, [0, 1], ['-4%', '4%']);
+  const y2  = useTransform(scrollYProgress, [0, 1], ['4%', '-4%']);
   const rot = useTransform(scrollYProgress, [0, 1], [-1.5, 1.5]);
 
   return (
@@ -104,10 +104,10 @@ export default function Dashboard3D() {
             {/* Window chrome */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 24px', borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(0,0,0,0.2)' }}>
               <div style={{ display: 'flex', gap: 8 }}>
-                {['#DA291C', '#f59e0b', '#22c55e'].map((c, i) => <div key={i} style={{ width: 12, height: 12, borderRadius: '50%', background: c }} />)}
+                {['#DA291C','#f59e0b','#22c55e'].map((c, i) => <div key={i} style={{ width: 12, height: 12, borderRadius: '50%', background: c }} />)}
               </div>
               <div style={{ flex: 1, maxWidth: 200, height: 20, borderRadius: 50, background: 'rgba(255,255,255,0.05)', display: 'flex', alignItems: 'center', padding: '0 12px' }}>
-                <span style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.7rem', color: 'rgba(255,255,255,0.25)' }}>joseferreira.remax.pt</span>
+                <span style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.7rem', color: 'rgba(255,255,255,0.25)' }}>alexandramoreira.remax.pt</span>
               </div>
               <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem', color: 'rgba(255,255,255,0.2)', letterSpacing: '0.08em' }}>RE/MAX · Dashboard</span>
             </div>
@@ -127,18 +127,16 @@ export default function Dashboard3D() {
                 <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.68rem', color: '#4ade80', fontWeight: 600 }}>↑ +32% vs ano anterior</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 6, height: 64 }}>
-                {[40, 60, 45, 70, 55, 80, 65, 90, 75, 85, 95, 100].map((h, i) => (
-                  <motion.div key={i} style={{
-                    flex: 1, height: `${h}%`, borderRadius: 3,
+                {[40,60,45,70,55,80,65,90,75,85,95,100].map((h, i) => (
+                  <motion.div key={i} style={{ flex: 1, height: `${h}%`, borderRadius: 3,
                     background: i === 11 ? 'linear-gradient(180deg,#DA291C,#722F37)' : i > 8 ? 'linear-gradient(180deg,#0033A0,#001a6b)' : 'rgba(255,255,255,0.07)',
-                    transformOrigin: 'bottom'
-                  }}
+                    transformOrigin: 'bottom' }}
                     initial={{ scaleY: 0 }} animate={inView ? { scaleY: 1 } : {}} transition={{ duration: 0.5, delay: 0.9 + i * 0.04, type: 'spring' }}
                   />
                 ))}
               </div>
               <div style={{ display: 'flex', gap: 6, marginTop: 8 }}>
-                {['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'].map((m, i) => (
+                {['J','F','M','A','M','J','J','A','S','O','N','D'].map((m, i) => (
                   <div key={i} style={{ flex: 1, textAlign: 'center', fontFamily: 'Open Sans, sans-serif', fontSize: '0.6rem', color: 'rgba(255,255,255,0.2)' }}>{m}</div>
                 ))}
               </div>
@@ -151,8 +149,8 @@ export default function Dashboard3D() {
               <div style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', marginBottom: 12 }}>Avaliação Média</div>
               <div style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 900, color: '#fff', fontSize: '2.5rem', lineHeight: 1, marginBottom: 8 }}>4.9</div>
               <div style={{ display: 'flex', gap: 3, marginBottom: 12 }}>
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill="#C9A96E"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" /></svg>
+                {[...Array(5)].map((_,i) => (
+                  <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill="#C9A96E"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
                 ))}
               </div>
               <div style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.68rem', color: 'rgba(255,255,255,0.3)' }}>200+ avaliações</div>

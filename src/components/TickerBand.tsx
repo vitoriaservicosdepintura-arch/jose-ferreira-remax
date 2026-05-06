@@ -6,7 +6,7 @@ const items = [
   '✦ Avaliação de Mercado',
   '✦ Negociação Profissional',
   '✦ RE/MAX DinâmicaDaire',
-  '✦ Equipa José Ferreira e Alexandra Moreira',
+  '✦ Equipa José Ferreira & Alexandra Moreira',
   '✦ Consultoria Exclusiva',
   '✦ Imóveis de Alto Padrão',
   '✦ Gestão de Propriedades',

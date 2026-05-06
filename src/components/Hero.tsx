@@ -32,20 +32,24 @@ export default function Hero() {
       ref={ref}
       id="hero"
       className="bg-hero-gradient"
-      style={{ minHeight: '100vh', height: 'auto', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', boxSizing: 'border-box' }}
+      style={{ minHeight: '100vh', height: 'auto', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: 100, paddingBottom: 60, boxSizing: 'border-box' }}
     >
       {/* Ambient orbs */}
-      <motion.div className="ambient-orb" style={{ position: 'absolute', top: 80, right: 0, width: 600, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,51,160,0.06) 0%, transparent 70%)', pointerEvents: 'none', x: mouseX, y: mouseY }} />
-      <motion.div className="ambient-orb" style={{ position: 'absolute', bottom: 0, left: 0, width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(114,47,55,0.07) 0%, transparent 70%)', pointerEvents: 'none' }} />
+      <motion.div style={{ position: 'absolute', top: 80, right: 0, width: 600, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,51,160,0.06) 0%, transparent 70%)', pointerEvents: 'none', x: mouseX, y: mouseY }} />
+      <motion.div style={{ position: 'absolute', bottom: 0, left: 0, width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(114,47,55,0.07) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
       {/* Dots */}
       <div className="dots-pattern" style={{ position: 'absolute', inset: 0, opacity: 0.4, pointerEvents: 'none' }} />
+
+
 
       <div style={{ maxWidth: 1300, margin: '0 auto', padding: '0 24px', width: '100%', position: 'relative', zIndex: 10 }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 40, alignItems: 'center' }} className="hero-grid-main">
 
           {/* LEFT */}
           <motion.div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingTop: 60, y: textY, opacity }} className="hero-text-col">
+
+
 
             {/* Headline */}
             <motion.h1
@@ -63,7 +67,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
               style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: 'clamp(0.9rem, 1.3vw, 1.15rem)', color: '#722F37', lineHeight: 1.6, marginBottom: 20 }}
             >
-              A <strong>Equipa José Ferreira e Alexandra Moreira</strong> ajuda-o a comprar ou vender o seu imóvel sem complicações.
+              A <strong>Equipa José Ferreira & Alexandra Moreira</strong> ajuda-o a comprar ou vender o seu imóvel sem complicações.
               Estamos na <strong>RE/MAX DinâmicaDaire</strong> para lhe dar toda a segurança que precisa.
             </motion.p>
 
@@ -78,10 +82,12 @@ export default function Hero() {
 
             {/* CTA */}
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.8 }} style={{ marginBottom: 16 }}>
-              <motion.a href="tel:+351966425721" className="btn-primary" style={{ padding: '12px 24px', fontSize: '0.8rem' }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
-                <Phone size={16} /> FALAR COM O JOSÉ AGORA
+              <motion.a href="tel:+351968211120" className="btn-primary" style={{ padding: '12px 24px', fontSize: '0.8rem' }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+                <Phone size={16} /> FALAR COM A ALEXANDRA AGORA
               </motion.a>
             </motion.div>
+
+
 
           </motion.div>
 
@@ -98,12 +104,9 @@ export default function Hero() {
               <div className="animate-morph" style={{ width: 'min(640px, 55vw)', height: 'min(750px, 80vh)', background: 'linear-gradient(135deg, rgba(0,51,160,0.08), rgba(114,47,55,0.08))' }} />
             </div>
 
-            <motion.div style={{ position: 'relative', zIndex: 10 }} className="hero-inner-wrapper">
-              {/* Decorative ring — hidden on mobile */}
-              <div
-                className="hero-decorative-ring"
-                style={{ position: 'absolute', inset: -16, borderRadius: 24, border: '2px solid #C9A96E', opacity: 0.2 }}
-              />
+            <motion.div style={{ position: 'relative', zIndex: 10, x: typeof window !== 'undefined' && window.innerWidth > 768 ? mouseX : 0, y: typeof window !== 'undefined' && window.innerWidth > 768 ? mouseY : 0 }}>
+              {/* Decorative ring */}
+              <div style={{ position: 'absolute', inset: -16, borderRadius: 24, border: '2px solid #C9A96E', opacity: 0.2 }} />
 
               {/* Photo */}
               <motion.div
@@ -112,30 +115,10 @@ export default function Hero() {
               >
                 <img
                   src="/images/alexandra-hero.png"
-                  alt="José Ferreira — Consultor Imobiliário RE/MAX DinâmicaDaire"
-                  className="hero-main-img"
-                  style={{ width: '100%', maxHeight: 'min(750px, 80vh)', objectFit: 'cover', objectPosition: 'top', display: 'block', imageRendering: 'auto', filter: 'contrast(1.02) brightness(1.02) saturate(1.05) drop-shadow(0 15px 30px rgba(0,0,0,0.1))' }}
+                  alt="Alexandra Moreira — Consultora Imobiliária RE/MAX DinâmicaDaire"
+                  style={{ width: '100%', maxHeight: 'min(750px, 80vh)', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
                 />
-
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, background: 'linear-gradient(to top, rgba(114,47,55,0.4), transparent)' }} />
-              </motion.div>
-
-              {/* Mobile floating bottom logo — Moved outside overflow:hidden to prevent clipping */}
-              <motion.div
-                className="hero-mobile-logo"
-                animate={{
-                  y: [0, -12, 0],
-                  rotate: [0, 1, 0, -1, 0],
-                  scale: [1, 1.02, 1]
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: 'easeInOut'
-                }}
-                style={{ position: 'absolute', bottom: -20, left: '50%', x: '-50%', width: '75%', zIndex: 40, display: 'none' }}
-              >
-                <img src="/images/remax-logo.png" alt="RE/MAX Logo" style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.35))' }} />
               </motion.div>
 
               {/* Large Background Logo */}
@@ -147,30 +130,44 @@ export default function Hero() {
                 <img src="/images/remax-balloon.png" alt="" style={{ width: 320, height: 'auto', objectFit: 'contain' }} />
               </motion.div>
 
-              {/* Overlapping Logo — Desktop only, hidden on mobile via CSS */}
+              {/* Overlapping Logo */}
               <motion.div
                 className="hero-logo-overlap"
-                style={{ position: 'absolute', left: '50%', bottom: -45, x: '-50%', zIndex: 30 }}
-                initial={{ opacity: 0, scale: 0.8 }}
+                style={{ position: 'absolute', left: -160, bottom: -60, zIndex: 30 }}
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 animate={{
                   opacity: 1,
-                  scale: [1, 1.03, 1],
-                  y: [0, -20, 0],
+                  scale: 1,
+                  y: [0, -15, 0],
                   rotate: [0, 2, 0, -2, 0]
                 }}
-                whileHover={{ scale: 1.08, filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.4))' }}
+                whileHover={{
+                  scale: 1.05,
+                  filter: 'drop-shadow(0 25px 50px rgba(0,0,0,0.3)) brightness(1.05)',
+                  transition: { duration: 0.3 }
+                }}
                 transition={{
                   opacity: { duration: 0.8, delay: 0.6 },
-                  y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-                  rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" },
-                  scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+                  scale: { duration: 0.8, delay: 0.6 },
+                  y: {
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1.2
+                  },
+                  rotate: {
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1.2
+                  }
                 }}
               >
                 <img
                   src="/images/remax-logo.png"
                   alt="RE/MAX Logo"
                   className="hero-logo-img"
-                  style={{ width: 300, height: 'auto', display: 'block', filter: 'drop-shadow(0 15px 40px rgba(0,0,0,0.25))' }}
+                  style={{ width: 340, height: 'auto', display: 'block', filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.2))' }}
                 />
               </motion.div>
             </motion.div>
@@ -179,11 +176,11 @@ export default function Hero() {
 
         {/* Scroll indicator */}
         <motion.div
-          className="hero-scroll-indicator"
           style={{ position: 'absolute', bottom: 32, left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, cursor: 'pointer' }}
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
           onClick={scrollToNext}
         >
+          <span style={{ fontFamily: 'Montserrat, sans-serif', fontSize: '0.65rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#aaa' }}>Descobrir</span>
           <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
             <ChevronDown size={22} color="#C9A96E" />
           </motion.div>
@@ -191,44 +188,22 @@ export default function Hero() {
       </div>
 
       <style>{`
-        #hero { padding-top: 100px; padding-bottom: 60px; }
-
-        /* Desktop: mouse parallax on inner wrapper */
-        .hero-inner-wrapper { x: var(--mouse-x, 0); y: var(--mouse-y, 0); }
-
         @media (max-width: 768px) {
-          #hero { 
-            padding-top: 100px !important; 
-            padding-bottom: 60px !important; 
-            min-height: 100svh !important; 
-            height: auto !important; 
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: center !important;
+          .hero-grid-main { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .hero-photo-col { order: -1; min-height: 520px; padding-top: 20px; position: relative; }
+          .hero-text-col  { order: 1; text-align: center; align-items: center; padding: 20px !important; }
+          .hero-text-col h1 { font-size: 1.8rem !important; }
+          .hero-text-col p { font-size: 0.9rem !important; margin-left: auto; margin-right: auto; }
+          .hero-logo-overlap { 
+            left: 0 !important; 
+            bottom: -50px !important; 
+            z-index: 50 !important;
           }
-          .hero-grid-main { grid-template-columns: 1fr !important; gap: 0px !important; width: 100%; }
-          .hero-photo-col { order: -1; margin-bottom: 40px !important; width: 100%; }
-          .hero-main-img { max-height: 50dvh !important; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15) !important; width: 85% !important; margin: 0 auto; }
-          .hero-text-col { order: 1; text-align: center; align-items: center; padding: 0 24px !important; y: 0 !important; opacity: 1 !important; transform: none !important; }
-          .hero-text-col h1 { font-size: 1.9rem !important; margin-bottom: 16px !important; line-height: 1.2 !important; }
-          .hero-text-col p { font-size: 0.9rem !important; margin-bottom: 24px !important; color: #555 !important; }
-          .hero-text-col .btn-primary { padding: 14px 28px !important; font-size: 0.85rem !important; }
-          
-          .hero-decorative-ring { display: none !important; }
-          .hero-scroll-indicator { bottom: 20px !important; }
-
-          .hero-logo-overlap { display: none !important; }
-          .hero-mobile-logo { 
-            display: block !important; 
-            bottom: -20px !important;
-            width: 70% !important;
+          .hero-logo-img { 
+            width: clamp(280px, 72vw, 400px) !important;
+            height: auto !important;
+            filter: drop-shadow(0 12px 28px rgba(0,0,0,0.3)) !important;
           }
-          .animate-morph {
-            width: 80vw !important;
-            height: 80vw !important;
-            opacity: 0.2 !important;
-          }
-          .ambient-orb { display: none; }
         }
       `}</style>
     </section>

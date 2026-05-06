@@ -25,14 +25,14 @@ export default function Autoridade() {
   return (
     <section ref={ref} id="autoridade" style={{ background: '#F5F5F0', position: 'relative', overflow: 'hidden', padding: '0' }}>
 
-      {/* Watermark "J" */}
+      {/* Watermark "A" */}
       <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none', overflow: 'hidden' }} aria-hidden="true">
-        <span className="watermark-am" style={{ color: '#0033A0' }}>J</span>
+        <span className="watermark-am" style={{ color: '#0033A0' }}>A</span>
       </div>
 
       <div className="lines-pattern" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
 
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 24px' }} ref={sectionRef} className="authority-inner-container">
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 24px' }} ref={sectionRef}>
 
         {/* Section label */}
         <motion.div
@@ -79,20 +79,15 @@ export default function Autoridade() {
               <div style={{ position: 'absolute', bottom: -20, right: -20, width: 56, height: 56, borderBottom: '3px solid #C9A96E', borderRight: '3px solid #C9A96E', zIndex: 2, pointerEvents: 'none' }} />
               <div style={{ position: 'absolute', inset: -8, border: '2px solid rgba(0,51,160,0.15)', borderRadius: 24, zIndex: 1 }} />
 
-              <motion.div
-                className="authority-photo-wrapper"
-                style={{ overflow: 'hidden', borderRadius: 24, maxWidth: 480, boxShadow: '0 25px 70px rgba(0,0,0,0.18)', position: 'relative', zIndex: 3 }}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.4 }}
-              >
+              <motion.div style={{ overflow: 'hidden', borderRadius: 20, maxWidth: 480, boxShadow: '0 25px 70px rgba(0,0,0,0.18)', position: 'relative', zIndex: 3 }} whileHover={{ scale: 1.02 }} transition={{ duration: 0.4 }}>
                 <img
                   src="/images/alexandra.png"
-                  alt="José Ferreira"
+                  alt="Alexandra Moreira"
                   style={{ width: '100%', maxHeight: 650, objectFit: 'cover', objectPosition: 'top', display: 'block' }}
                 />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '32px 24px', background: 'linear-gradient(to top, rgba(114,47,55,0.95) 0%, transparent 100%)' }}>
-                  <p style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, color: '#fff', fontSize: '1rem', margin: 0 }}>José Ferreira</p>
-                  <p style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.8)', margin: '4px 0 0' }}>Consultor Imobiliário · RE/MAX DinâmicaDaire</p>
+                  <p style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, color: '#fff', fontSize: '1rem', margin: 0 }}>Alexandra Moreira</p>
+                  <p style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.8)', margin: '4px 0 0' }}>Consultora Imobiliária · RE/MAX DinâmicaDaire</p>
                 </div>
               </motion.div>
 
@@ -119,8 +114,8 @@ export default function Autoridade() {
               initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.4 }}
               style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.92rem', color: '#555', lineHeight: 1.8, marginBottom: 32 }}
             >
-              Sou o <strong style={{ color: '#722F37' }}>José Ferreira</strong>, consultor imobiliário na RE/MAX DinâmicaDaire,
-              e faço parte da <strong style={{ color: '#0033A0' }}>Equipa José Ferreira e Alexandra Moreira</strong>.
+              Sou a <strong style={{ color: '#722F37' }}>Alexandra Moreira</strong>, consultora imobiliária na RE/MAX DinâmicaDaire,
+              e faço parte da <strong style={{ color: '#0033A0' }}>Equipa José Ferreira & Alexandra Moreira</strong>.
             </motion.p>
 
             {/* Credentials */}
@@ -167,19 +162,8 @@ export default function Autoridade() {
         @media (max-width: 768px) {
           .authority-main-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
           .stats-grid           { grid-template-columns: 1fr 1fr !important; }
-          .authority-balloon    { width: 320px !important; left: -60px !important; top: -20px !important; opacity: 0.1 !important; }
-          .authority-photo-wrapper { 
-            max-width: 100% !important; 
-            border-radius: 20px !important; 
-            width: 95vw !important;
-            margin-left: calc(-47.5vw + 50%);
-          }
-          .authority-photo-wrapper img {
-            max-height: 80dvh !important;
-          }
-          .authority-inner-container {
-            padding: 40px 16px !important;
-          }
+          .authority-balloon    { width: 280px !important; left: -40px !important; top: -40px !important; }
+          .authority-photo-container { scale: 0.95; }
         }
       `}</style>
     </section>

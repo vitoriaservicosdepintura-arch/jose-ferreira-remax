@@ -66,14 +66,14 @@ export default function Navbar() {
             >
               <img
                 src="/images/remax-logo.png"
-                alt="RE/MAX Logo"
+                alt="RE/MAX"
                 className="navbar-logo-img"
                 style={{
-                  height: scrolled ? 65 : 85,
+                  height: scrolled ? 110 : 150,
                   width: 'auto',
                   objectFit: 'contain',
-                  filter: 'drop-shadow(0 10px 25px rgba(0,0,0,0.12))',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
+                  filter: 'drop-shadow(0 8px 20px rgba(0,0,0,0.25))',
+                  transition: 'all 0.4s ease'
                 }}
               />
             </motion.div>
@@ -172,9 +172,9 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .desktop-nav  { display: none !important; }
           .mobile-burger{ display: block !important; }
-          .navbar-logo-img { height: 50px !important; }
+          .navbar-logo-img { height: ${scrolled ? '100px' : '130px'} !important; }
           .navbar-logo-container { position: relative !important; left: 0 !important; }
-          .fixed-container { padding: 0 16px !important; height: ${scrolled ? '64px' : '76px'} !important; }
+          .fixed-container { padding: 0 16px !important; height: ${scrolled ? '72px' : '100px'} !important; }
         }
         .nav-link-btn::after {
           content: '';
