@@ -99,8 +99,8 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0, rotateY: 0 }}
             transition={{ duration: 1, delay: 0.4, type: 'spring', stiffness: 80 }}
           >
-            {/* Morphing blob */}
-            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+            {/* Morphing blob (Desktop) */}
+            <div className="desktop-blob-container" style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
               <div className="animate-morph" style={{ width: 'min(640px, 55vw)', height: 'min(750px, 80vh)', background: 'linear-gradient(135deg, rgba(0,51,160,0.08), rgba(114,47,55,0.08))' }} />
             </div>
 
@@ -113,12 +113,21 @@ export default function Hero() {
                 style={{ position: 'relative', overflow: 'hidden', borderRadius: 16, maxWidth: 620, boxShadow: '0 40px 100px rgba(0,0,0,0.22)' }}
                 whileHover={{ scale: 1.02 }} transition={{ duration: 0.4 }}
               >
+                {/* Mobile Blob (Contained) */}
+                <div className="mobile-blob-bg animate-morph" style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(135deg, rgba(0,51,160,0.15), rgba(114,47,55,0.15))',
+                  zIndex: 0,
+                  display: 'none'
+                }} />
+
                 <img
                   src="/images/alexandra-hero.png"
-                  alt="Alexandra Moreira — Consultora Imobiliária RE/MAX DinâmicaDaire"
-                  style={{ width: '100%', maxHeight: 'min(750px, 80vh)', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+                  alt="José Ferreira — Consultor Imobiliário RE/MAX DinâmicaDaire"
+                  style={{ width: '100%', maxHeight: 'min(750px, 80vh)', objectFit: 'cover', objectPosition: 'top', display: 'block', position: 'relative', zIndex: 1 }}
                 />
-                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, background: 'linear-gradient(to top, rgba(114,47,55,0.4), transparent)' }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, background: 'linear-gradient(to top, rgba(114,47,55,0.4), transparent)', zIndex: 2 }} />
               </motion.div>
 
               {/* Large Background Logo */}
@@ -204,6 +213,8 @@ export default function Hero() {
             height: auto !important;
             filter: drop-shadow(0 12px 28px rgba(0,0,0,0.3)) !important;
           }
+          .desktop-blob-container { display: none !important; }
+          .mobile-blob-bg { display: block !important; }
         }
       `}</style>
     </section>
