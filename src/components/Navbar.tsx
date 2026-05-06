@@ -65,7 +65,7 @@ export default function Navbar() {
               transition={{ type: 'spring', stiffness: 300 }}
             >
               <img
-                src="/images/remax-logo.png"
+                src="/images/LOGO2-sem-fundo.png"
                 alt="RE/MAX"
                 className="navbar-logo-img"
                 style={{
