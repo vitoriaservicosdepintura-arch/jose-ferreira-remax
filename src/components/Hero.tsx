@@ -49,11 +49,12 @@ export default function Hero() {
         {/* Mobile Top Logo */}
         {isMobile && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            style={{ display: 'flex', justifyContent: 'center', marginBottom: 20 }}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            style={{ display: 'flex', justifyContent: 'center', marginBottom: 15 }}
           >
-            <img src="/images/LOGO2-sem-fundo.png" alt="Equipa Imobiliária" style={{ width: 180, height: 'auto' }} />
+            <img src="/images/remax-logo.png" alt="RE/MAX" style={{ width: 220, height: 'auto', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.1))' }} />
           </motion.div>
         )}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 40, alignItems: 'center' }} className="hero-grid-main">
@@ -133,9 +134,13 @@ export default function Hero() {
 
                 {/* Mobile Inner Bottom Logo */}
                 {isMobile && (
-                  <div style={{ position: 'absolute', bottom: 10, left: '50%', transform: 'translateX(-50%)', width: '80%', zIndex: 20 }}>
-                    <img src="/images/LOGO2-sem-fundo.png" alt="Equipa Imobiliária" style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 5px 15px rgba(0,0,0,0.3))' }} />
-                  </div>
+                  <motion.div
+                    animate={{ y: [0, -15, 0], rotate: [0, 2, 0, -2, 0] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                    style={{ position: 'absolute', bottom: -30, left: '50%', transform: 'translateX(-50%)', width: '90%', zIndex: 40 }}
+                  >
+                    <img src="/images/remax-logo.png" alt="RE/MAX" style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 15px 35px rgba(0,0,0,0.3))' }} />
+                  </motion.div>
                 )}
 
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, background: 'linear-gradient(to top, rgba(114,47,55,0.4), transparent)' }} />
@@ -150,47 +155,48 @@ export default function Hero() {
                 <img src="/images/remax-balloon.png" alt="" style={{ width: 320, height: 'auto', objectFit: 'contain' }} />
               </motion.div>
 
-              {/* Overlapping Logo */}
-              <motion.div
-                className="hero-logo-overlap"
-                style={{ position: 'absolute', left: isMobile ? '50%' : -160, bottom: -60, zIndex: 30 }}
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                  y: [0, -25, 0],
-                  x: isMobile ? '-50%' : 0,
-                  rotate: [0, 3, 0, -3, 0]
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  filter: 'drop-shadow(0 25px 50px rgba(0,0,0,0.3)) brightness(1.05)',
-                  transition: { duration: 0.3 }
-                }}
-                transition={{
-                  opacity: { duration: 0.8, delay: 0.6 },
-                  scale: { duration: 0.8, delay: 0.6 },
-                  y: {
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1.2
-                  },
-                  rotate: {
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1.2
-                  }
-                }}
-              >
-                <img
-                  src="/images/remax-logo.png"
-                  alt="RE/MAX Logo"
-                  className="hero-logo-img"
-                  style={{ width: 300, height: 'auto', display: 'block', filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.2))' }}
-                />
-              </motion.div>
+              {/* Overlapping Logo (Desktop only now or keep for background) */}
+              {!isMobile && (
+                <motion.div
+                  className="hero-logo-overlap"
+                  style={{ position: 'absolute', left: -160, bottom: -60, zIndex: 30 }}
+                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    y: [0, -25, 0],
+                    rotate: [0, 3, 0, -3, 0]
+                  }}
+                  whileHover={{
+                    scale: 1.05,
+                    filter: 'drop-shadow(0 25px 50px rgba(0,0,0,0.3)) brightness(1.05)',
+                    transition: { duration: 0.3 }
+                  }}
+                  transition={{
+                    opacity: { duration: 0.8, delay: 0.6 },
+                    scale: { duration: 0.8, delay: 0.6 },
+                    y: {
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 1.2
+                    },
+                    rotate: {
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 1.2
+                    }
+                  }}
+                >
+                  <img
+                    src="/images/remax-logo.png"
+                    alt="RE/MAX Logo"
+                    className="hero-logo-img"
+                    style={{ width: 300, height: 'auto', display: 'block', filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.2))' }}
+                  />
+                </motion.div>
+              )}
             </motion.div>
           </motion.div>
         </div>
