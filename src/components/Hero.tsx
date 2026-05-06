@@ -67,7 +67,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
               style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700, fontSize: 'clamp(0.9rem, 1.3vw, 1.15rem)', color: '#722F37', lineHeight: 1.6, marginBottom: 20 }}
             >
-              A <strong>Equipa José Ferreira & Alexandra Moreira</strong> ajuda-o a comprar ou vender o seu imóvel sem complicações.
+              O <strong>José Ferreira, Consultor RE/MAX</strong> ajuda-o a comprar ou vender o seu imóvel sem complicações.
               Estamos na <strong>RE/MAX DinâmicaDaire</strong> para lhe dar toda a segurança que precisa.
             </motion.p>
 

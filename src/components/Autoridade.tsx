@@ -115,7 +115,7 @@ export default function Autoridade() {
               style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.92rem', color: '#555', lineHeight: 1.8, marginBottom: 32 }}
             >
               Sou o <strong style={{ color: '#722F37' }}>José Ferreira (Zeca)</strong>, consultor imobiliária na RE/MAX DinâmicaDaire,
-              e faço parte da <strong style={{ color: '#0033A0' }}>Equipa José Ferreira & Alexandra Moreira</strong>.
+              especialista em consultoria imobiliária.
             </motion.p>
 
             {/* Credentials */}
