@@ -172,9 +172,9 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .desktop-nav  { display: none !important; }
           .mobile-burger{ display: block !important; }
-          .navbar-logo-img { height: ${scrolled ? '100px' : '130px'} !important; }
+          .navbar-logo-img { height: ${scrolled ? '50px' : '55px'} !important; }
           .navbar-logo-container { position: relative !important; left: 0 !important; }
-          .fixed-container { padding: 0 16px !important; height: ${scrolled ? '72px' : '100px'} !important; }
+          .fixed-container { padding: 0 16px !important; height: ${scrolled ? '60px' : '72px'} !important; }
         }
         .nav-link-btn::after {
           content: '';

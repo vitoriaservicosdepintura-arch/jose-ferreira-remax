@@ -25,8 +25,6 @@ export default function Hero() {
     return () => el?.removeEventListener('mousemove', onMove);
   }, [mouseX, mouseY]);
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
-
   const scrollToNext = () => document.getElementById('autoridade')?.scrollIntoView({ behavior: 'smooth' });
 
   return (
@@ -43,26 +41,11 @@ export default function Hero() {
       {/* Dots */}
       <div className="dots-pattern" style={{ position: 'absolute', inset: 0, opacity: 0.4, pointerEvents: 'none' }} />
 
-
-
       <div style={{ maxWidth: 1300, margin: '0 auto', padding: '0 24px', width: '100%', position: 'relative', zIndex: 10 }}>
-        {/* Mobile Top Logo */}
-        {isMobile && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            style={{ display: 'flex', justifyContent: 'center', marginBottom: 15 }}
-          >
-            <img src="/images/remax-logo.png" alt="RE/MAX" style={{ width: 220, height: 'auto', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.1))' }} />
-          </motion.div>
-        )}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 40, alignItems: 'center' }} className="hero-grid-main">
 
           {/* LEFT */}
           <motion.div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingTop: 60, y: textY, opacity }} className="hero-text-col">
-
-
 
             {/* Headline */}
             <motion.h1
@@ -100,8 +83,6 @@ export default function Hero() {
               </motion.a>
             </motion.div>
 
-
-
           </motion.div>
 
           {/* RIGHT — Photo */}
@@ -117,7 +98,7 @@ export default function Hero() {
               <div className="animate-morph" style={{ width: 'min(640px, 55vw)', height: 'min(750px, 80vh)', background: 'linear-gradient(135deg, rgba(0,51,160,0.08), rgba(114,47,55,0.08))' }} />
             </div>
 
-            <motion.div style={{ position: 'relative', zIndex: 10, x: !isMobile ? mouseX : 0, y: !isMobile ? mouseY : 0 }}>
+            <motion.div style={{ position: 'relative', zIndex: 10 }} className="hero-inner-wrapper">
               {/* Decorative ring */}
               <div style={{ position: 'absolute', inset: -16, borderRadius: 24, border: '2px solid #C9A96E', opacity: 0.2 }} />
 
@@ -132,16 +113,15 @@ export default function Hero() {
                   style={{ width: '100%', maxHeight: 'min(750px, 80vh)', objectFit: 'cover', objectPosition: 'top', display: 'block', imageRendering: 'auto', filter: 'contrast(1.02) brightness(1.02) saturate(1.05) drop-shadow(0 15px 30px rgba(0,0,0,0.1))' }}
                 />
 
-                {/* Mobile Inner Bottom Logo */}
-                {isMobile && (
-                  <motion.div
-                    animate={{ y: [0, -15, 0], rotate: [0, 2, 0, -2, 0] }}
-                    transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                    style={{ position: 'absolute', bottom: -30, left: '50%', transform: 'translateX(-50%)', width: '90%', zIndex: 40 }}
-                  >
-                    <img src="/images/remax-logo.png" alt="RE/MAX" style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 15px 35px rgba(0,0,0,0.3))' }} />
-                  </motion.div>
-                )}
+                {/* Mobile floating bottom logo — shown only on mobile via CSS */}
+                <motion.div
+                  className="hero-mobile-logo"
+                  animate={{ y: [0, -15, 0], rotate: [0, 2, 0, -2, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                  style={{ position: 'absolute', bottom: -30, left: '50%', transform: 'translateX(-50%)', width: '90%', zIndex: 40, display: 'none' }}
+                >
+                  <img src="/images/remax-logo.png" alt="RE/MAX" style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 15px 35px rgba(0,0,0,0.3))' }} />
+                </motion.div>
 
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, background: 'linear-gradient(to top, rgba(114,47,55,0.4), transparent)' }} />
               </motion.div>
@@ -155,48 +135,46 @@ export default function Hero() {
                 <img src="/images/remax-balloon.png" alt="" style={{ width: 320, height: 'auto', objectFit: 'contain' }} />
               </motion.div>
 
-              {/* Overlapping Logo (Desktop only now or keep for background) */}
-              {!isMobile && (
-                <motion.div
-                  className="hero-logo-overlap"
-                  style={{ position: 'absolute', left: -160, bottom: -60, zIndex: 30 }}
-                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                  animate={{
-                    opacity: 1,
-                    scale: 1,
-                    y: [0, -25, 0],
-                    rotate: [0, 3, 0, -3, 0]
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    filter: 'drop-shadow(0 25px 50px rgba(0,0,0,0.3)) brightness(1.05)',
-                    transition: { duration: 0.3 }
-                  }}
-                  transition={{
-                    opacity: { duration: 0.8, delay: 0.6 },
-                    scale: { duration: 0.8, delay: 0.6 },
-                    y: {
-                      duration: 5,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 1.2
-                    },
-                    rotate: {
-                      duration: 8,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 1.2
-                    }
-                  }}
-                >
-                  <img
-                    src="/images/remax-logo.png"
-                    alt="RE/MAX Logo"
-                    className="hero-logo-img"
-                    style={{ width: 300, height: 'auto', display: 'block', filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.2))' }}
-                  />
-                </motion.div>
-              )}
+              {/* Overlapping Logo — Desktop only, hidden on mobile via CSS */}
+              <motion.div
+                className="hero-logo-overlap"
+                style={{ position: 'absolute', left: -160, bottom: -60, zIndex: 30 }}
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: [0, -25, 0],
+                  rotate: [0, 3, 0, -3, 0]
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  filter: 'drop-shadow(0 25px 50px rgba(0,0,0,0.3)) brightness(1.05)',
+                  transition: { duration: 0.3 }
+                }}
+                transition={{
+                  opacity: { duration: 0.8, delay: 0.6 },
+                  scale: { duration: 0.8, delay: 0.6 },
+                  y: {
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1.2
+                  },
+                  rotate: {
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1.2
+                  }
+                }}
+              >
+                <img
+                  src="/images/remax-logo.png"
+                  alt="RE/MAX Logo"
+                  className="hero-logo-img"
+                  style={{ width: 300, height: 'auto', display: 'block', filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.2))' }}
+                />
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
@@ -215,23 +193,21 @@ export default function Hero() {
 
       <style>{`
         #hero { padding-top: 100px; padding-bottom: 60px; }
+
+        /* Desktop: mouse parallax on inner wrapper */
+        .hero-inner-wrapper { x: var(--mouse-x, 0); y: var(--mouse-y, 0); }
+
         @media (max-width: 768px) {
-          #hero { padding-top: 40px !important; padding-bottom: 20px !important; }
+          #hero { padding-top: 90px !important; padding-bottom: 20px !important; }
           .hero-grid-main { grid-template-columns: 1fr !important; gap: 10px !important; }
-          .hero-photo-col { order: -1; min-height: auto !important; padding-top: 0 !important; margin-bottom: 10px; }
+          .hero-photo-col { order: -1; min-height: auto !important; padding-top: 0 !important; margin-bottom: 60px; }
           .hero-text-col  { order: 1; text-align: center; align-items: center; padding: 0 !important; }
           .hero-text-col h1 { font-size: 1.9rem !important; margin-bottom: 12px !important; line-height: 1.2 !important; }
           .hero-text-col p { font-size: 0.85rem !important; margin-left: auto; margin-right: auto; margin-bottom: 12px !important; display: none; }
           .hero-text-col .btn-primary { display: none; }
-          .hero-logo-overlap { 
-            bottom: 20% !important; 
-            z-index: 5 !important;
-            opacity: 0.2 !important;
-          }
-          .hero-logo-img { 
-            width: 80vw !important;
-            height: auto !important;
-          }
+          /* Hide desktop logo, show mobile logo */
+          .hero-logo-overlap { display: none !important; }
+          .hero-mobile-logo { display: block !important; }
           .animate-morph {
             width: 90vw !important;
             height: 90vw !important;
