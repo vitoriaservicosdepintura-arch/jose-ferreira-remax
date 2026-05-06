@@ -17,7 +17,7 @@ export default function Footer() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}>
             <img src="/images/remax-logo.png" alt="RE/MAX DinâmicaDaire" className="footer-logo-main" style={{ height: 100, width: 'auto', objectFit: 'contain', marginBottom: 24, filter: 'brightness(1.2)' }} />
             <p style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.7, margin: 0 }}>
-              José Ferreira, Consultor RE/MAX — comprometido com a excelência no mercado imobiliário.
+              Equipa José Ferreira & Alexandra Moreira — comprometida com a excelência no mercado imobiliário.
             </p>
           </motion.div>
 
@@ -97,7 +97,7 @@ export default function Footer() {
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: 28, borderTop: '1px solid rgba(255,255,255,0.06)', flexWrap: 'wrap', gap: 24 }}
         >
           <p style={{ fontFamily: 'Open Sans, sans-serif', fontSize: '0.72rem', color: 'rgba(255,255,255,0.25)', margin: 0 }}>
-            © {new Date().getFullYear()} RE/MAX DinâmicaDaire · José Ferreira, Consultor RE/MAX. Todos os direitos reservados.
+            © {new Date().getFullYear()} RE/MAX DinâmicaDaire · Equipa José Ferreira & Alexandra Moreira. Todos os direitos reservados.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
             <img src="/images/remax-balloon.png" alt="RE/MAX" style={{ height: 54, width: 'auto', objectFit: 'contain', opacity: 0.6, filter: 'brightness(1.2)' }} />
