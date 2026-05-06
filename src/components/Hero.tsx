@@ -199,11 +199,19 @@ export default function Hero() {
         .hero-inner-wrapper { x: var(--mouse-x, 0); y: var(--mouse-y, 0); }
 
         @media (max-width: 768px) {
-          #hero { padding-top: 80px !important; padding-bottom: 20px !important; }
-          .hero-grid-main { grid-template-columns: 1fr !important; gap: 0px !important; }
-          .hero-photo-col { order: -1; min-height: auto !important; padding-top: 0 !important; margin-bottom: 0px !important; }
+          #hero { 
+            padding-top: 70px !important; 
+            padding-bottom: 20px !important; 
+            min-height: 100dvh !important; 
+            height: auto !important; 
+            display: flex;
+            align-items: center;
+          }
+          .hero-grid-main { grid-template-columns: 1fr !important; gap: 0px !important; width: 100%; margin-top: -30px; }
+          .hero-photo-col { order: -1; min-height: auto !important; padding-top: 0 !important; margin-bottom: 30px !important; }
+          .hero-main-img { max-height: 48dvh !important; border-radius: 12px; }
           .hero-text-col  { order: 1; text-align: center; align-items: center; padding: 0 !important; }
-          .hero-text-col h1 { font-size: 1.9rem !important; margin-bottom: 12px !important; line-height: 1.2 !important; }
+          .hero-text-col h1 { font-size: 1.55rem !important; margin-bottom: 0px !important; line-height: 1.15 !important; }
           .hero-text-col p { font-size: 0.85rem !important; margin-left: auto; margin-right: auto; margin-bottom: 12px !important; display: none; }
           .hero-text-col .btn-primary { display: none; }
           /* Hide desktop logo, show mobile logo */
