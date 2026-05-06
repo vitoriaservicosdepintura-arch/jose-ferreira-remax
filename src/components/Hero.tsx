@@ -117,17 +117,25 @@ export default function Hero() {
                   style={{ width: '100%', maxHeight: 'min(750px, 80vh)', objectFit: 'cover', objectPosition: 'top', display: 'block', imageRendering: 'auto', filter: 'contrast(1.02) brightness(1.02) saturate(1.05) drop-shadow(0 15px 30px rgba(0,0,0,0.1))' }}
                 />
 
-                {/* Mobile floating bottom logo — shown only on mobile via CSS */}
-                <motion.div
-                  className="hero-mobile-logo"
-                  animate={{ y: [0, -10, 0], rotate: [0, 2, 0, -2, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                  style={{ position: 'absolute', bottom: -15, left: '50%', x: '-50%', width: '85%', zIndex: 40, display: 'none' }}
-                >
-                  <img src="/images/LOGO2-sem-fundo.png" alt="Equipa Imobiliária" style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 15px 35px rgba(0,0,0,0.3))' }} />
-                </motion.div>
-
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 80, background: 'linear-gradient(to top, rgba(114,47,55,0.4), transparent)' }} />
+              </motion.div>
+
+              {/* Mobile floating bottom logo — Moved outside overflow:hidden to prevent clipping */}
+              <motion.div
+                className="hero-mobile-logo"
+                animate={{
+                  y: [0, -12, 0],
+                  rotate: [0, 1, 0, -1, 0],
+                  scale: [1, 1.02, 1]
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: 'easeInOut'
+                }}
+                style={{ position: 'absolute', bottom: -20, left: '50%', x: '-50%', width: '75%', zIndex: 40, display: 'none' }}
+              >
+                <img src="/images/remax-logo.png" alt="RE/MAX Logo" style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.35))' }} />
               </motion.div>
 
               {/* Large Background Logo */}
@@ -142,41 +150,27 @@ export default function Hero() {
               {/* Overlapping Logo — Desktop only, hidden on mobile via CSS */}
               <motion.div
                 className="hero-logo-overlap"
-                style={{ position: 'absolute', left: '50%', bottom: -60, x: '-50%', zIndex: 30 }}
-                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                style={{ position: 'absolute', left: '50%', bottom: -45, x: '-50%', zIndex: 30 }}
+                initial={{ opacity: 0, scale: 0.8 }}
                 animate={{
                   opacity: 1,
-                  scale: 1,
-                  y: [0, -25, 0],
-                  rotate: [0, 3, 0, -3, 0]
+                  scale: [1, 1.03, 1],
+                  y: [0, -20, 0],
+                  rotate: [0, 2, 0, -2, 0]
                 }}
-                whileHover={{
-                  scale: 1.05,
-                  filter: 'drop-shadow(0 25px 50px rgba(0,0,0,0.3)) brightness(1.05)',
-                  transition: { duration: 0.3 }
-                }}
+                whileHover={{ scale: 1.08, filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.4))' }}
                 transition={{
                   opacity: { duration: 0.8, delay: 0.6 },
-                  scale: { duration: 0.8, delay: 0.6 },
-                  y: {
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1.2
-                  },
-                  rotate: {
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1.2
-                  }
+                  y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                  rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" },
+                  scale: { duration: 6, repeat: Infinity, ease: "easeInOut" }
                 }}
               >
                 <img
                   src="/images/remax-logo.png"
                   alt="RE/MAX Logo"
                   className="hero-logo-img"
-                  style={{ width: 300, height: 'auto', display: 'block', filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.2))' }}
+                  style={{ width: 300, height: 'auto', display: 'block', filter: 'drop-shadow(0 15px 40px rgba(0,0,0,0.25))' }}
                 />
               </motion.div>
             </motion.div>
@@ -204,30 +198,35 @@ export default function Hero() {
 
         @media (max-width: 768px) {
           #hero { 
-            padding-top: 80px !important; 
-            padding-bottom: 40px !important; 
-            min-height: 100dvh !important; 
+            padding-top: 100px !important; 
+            padding-bottom: 60px !important; 
+            min-height: 100svh !important; 
             height: auto !important; 
-            display: block !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
           }
-          .hero-grid-main { grid-template-columns: 1fr !important; gap: 0px !important; width: 100%; margin-top: 0; }
-          .hero-photo-col { order: -1; min-height: auto !important; padding-top: 0 !important; margin-bottom: 60px !important; }
-          .hero-main-img { max-height: 65dvh !important; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15) !important; width: 92% !important; margin: 0 auto; }
-          .hero-text-col { order: 1; text-align: center; align-items: center; padding: 0 20px 60px 20px !important; y: 0 !important; opacity: 1 !important; }
-          .hero-text-col h1 { font-size: 1.8rem !important; margin-bottom: 20px !important; line-height: 1.2 !important; padding: 0 10px; }
-          .hero-text-col p { font-size: 0.95rem !important; margin-left: auto; margin-right: auto; margin-bottom: 24px !important; display: block !important; opacity: 1 !important; color: #555 !important; }
-          .hero-text-col .btn-primary { display: inline-flex !important; padding: 16px 32px !important; font-size: 0.9rem !important; margin-top: 10px; }
+          .hero-grid-main { grid-template-columns: 1fr !important; gap: 0px !important; width: 100%; }
+          .hero-photo-col { order: -1; margin-bottom: 40px !important; width: 100%; }
+          .hero-main-img { max-height: 50dvh !important; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.15) !important; width: 85% !important; margin: 0 auto; }
+          .hero-text-col { order: 1; text-align: center; align-items: center; padding: 0 24px !important; y: 0 !important; opacity: 1 !important; transform: none !important; }
+          .hero-text-col h1 { font-size: 1.9rem !important; margin-bottom: 16px !important; line-height: 1.2 !important; }
+          .hero-text-col p { font-size: 0.9rem !important; margin-bottom: 24px !important; color: #555 !important; }
+          .hero-text-col .btn-primary { padding: 14px 28px !important; font-size: 0.85rem !important; }
           
           .hero-decorative-ring { display: none !important; }
           .hero-scroll-indicator { bottom: 20px !important; }
 
-          /* Hide desktop logo, show mobile logo */
           .hero-logo-overlap { display: none !important; }
-          .hero-mobile-logo { display: block !important; }
+          .hero-mobile-logo { 
+            display: block !important; 
+            bottom: -20px !important;
+            width: 70% !important;
+          }
           .animate-morph {
-            width: 100vw !important;
-            height: 100vw !important;
-            opacity: 0.3 !important;
+            width: 80vw !important;
+            height: 80vw !important;
+            opacity: 0.2 !important;
           }
           .ambient-orb { display: none; }
         }
