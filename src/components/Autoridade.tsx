@@ -32,7 +32,7 @@ export default function Autoridade() {
 
       <div className="lines-pattern" style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} />
 
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 24px' }} ref={sectionRef}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '40px 24px' }} ref={sectionRef} className="authority-inner-container">
 
         {/* Section label */}
         <motion.div
@@ -79,7 +79,12 @@ export default function Autoridade() {
               <div style={{ position: 'absolute', bottom: -20, right: -20, width: 56, height: 56, borderBottom: '3px solid #C9A96E', borderRight: '3px solid #C9A96E', zIndex: 2, pointerEvents: 'none' }} />
               <div style={{ position: 'absolute', inset: -8, border: '2px solid rgba(0,51,160,0.15)', borderRadius: 24, zIndex: 1 }} />
 
-              <motion.div style={{ overflow: 'hidden', borderRadius: 20, maxWidth: 480, boxShadow: '0 25px 70px rgba(0,0,0,0.18)', position: 'relative', zIndex: 3 }} whileHover={{ scale: 1.02 }} transition={{ duration: 0.4 }}>
+              <motion.div
+                className="authority-photo-wrapper"
+                style={{ overflow: 'hidden', borderRadius: 24, maxWidth: 480, boxShadow: '0 25px 70px rgba(0,0,0,0.18)', position: 'relative', zIndex: 3 }}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.4 }}
+              >
                 <img
                   src="/images/alexandra.png"
                   alt="José Ferreira"
@@ -162,8 +167,19 @@ export default function Autoridade() {
         @media (max-width: 768px) {
           .authority-main-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
           .stats-grid           { grid-template-columns: 1fr 1fr !important; }
-          .authority-balloon    { width: 280px !important; left: -40px !important; top: -40px !important; }
-          .authority-photo-container { scale: 0.95; }
+          .authority-balloon    { width: 320px !important; left: -60px !important; top: -20px !important; opacity: 0.1 !important; }
+          .authority-photo-wrapper { 
+            max-width: 100% !important; 
+            border-radius: 20px !important; 
+            width: 95vw !important;
+            margin-left: calc(-47.5vw + 50%);
+          }
+          .authority-photo-wrapper img {
+            max-height: 80dvh !important;
+          }
+          .authority-inner-container {
+            padding: 40px 16px !important;
+          }
         }
       `}</style>
     </section>
