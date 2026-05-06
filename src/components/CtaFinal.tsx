@@ -119,7 +119,7 @@ export default function CtaFinal() {
             >
               {[
                 { icon: <Phone size={14} />, label: 'Telefone', value: '+351 966 425 721', href: 'tel:+351966425721', hColor: '#25D366' },
-                { icon: <Mail size={14} />, label: 'Email', value: 'jamerico@remax.pt', href: 'mailto:jamerico@remax.pt', hColor: '#0033A0' },
+                { icon: <Mail size={14} />, label: 'Email', value: 'jam.ferreira@remax.pt', href: 'mailto:jam.ferreira@remax.pt', hColor: '#0033A0' },
                 { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" /><path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>, label: 'Instagram', value: '@joseamericodamoita', href: 'https://www.instagram.com/joseamericodamoita', hColor: '#E1306C' },
                 { icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>, label: 'Facebook', value: 'Zeca Ferreira', href: 'https://www.facebook.com/zeca.ferreira.3', hColor: '#1877F2' },
                 { icon: <Globe size={14} />, label: 'Website', value: 'Perfil RE/MAX', href: 'https://remax.pt/pt/agente/jose-ferreira/126421023', hColor: '#C9A96E' },

@@ -47,7 +47,7 @@ export default function Footer() {
             <ul className="footer-contacts-grid" style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '14px 24px' }}>
               {[
                 { icon: <Phone size={13} />, href: 'tel:+351966425721', text: '+351 966 425 721', bg: 'rgba(218,41,28,0.15)', color: '#DA291C' },
-                { icon: <Mail size={13} />, href: 'mailto:jamerico@remax.pt', text: 'jamerico@remax.pt', bg: 'rgba(0,51,160,0.15)', color: '#0033A0' },
+                { icon: <Mail size={13} />, href: 'mailto:jam.ferreira@remax.pt', text: 'jam.ferreira@remax.pt', bg: 'rgba(0,51,160,0.15)', color: '#0033A0' },
                 {
                   icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" /><path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg>,
                   href: 'https://www.instagram.com/joseamericodamoita',
