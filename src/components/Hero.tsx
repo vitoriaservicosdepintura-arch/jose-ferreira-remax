@@ -110,15 +110,16 @@ export default function Hero() {
                 <img
                   src="/images/alexandra-hero.png"
                   alt="José Ferreira — Consultor Imobiliário RE/MAX DinâmicaDaire"
+                  className="hero-main-img"
                   style={{ width: '100%', maxHeight: 'min(750px, 80vh)', objectFit: 'cover', objectPosition: 'top', display: 'block', imageRendering: 'auto', filter: 'contrast(1.02) brightness(1.02) saturate(1.05) drop-shadow(0 15px 30px rgba(0,0,0,0.1))' }}
                 />
 
                 {/* Mobile floating bottom logo — shown only on mobile via CSS */}
                 <motion.div
                   className="hero-mobile-logo"
-                  animate={{ y: [0, -15, 0], rotate: [0, 2, 0, -2, 0] }}
+                  animate={{ y: [0, -10, 0], rotate: [0, 2, 0, -2, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                  style={{ position: 'absolute', bottom: -40, left: '50%', x: '-50%', width: '75%', maxWidth: 250, zIndex: 40, display: 'none' }}
+                  style={{ position: 'absolute', bottom: -30, left: '50%', x: '-50%', width: '90%', zIndex: 40, display: 'none' }}
                 >
                   <img src="/images/remax-logo.png" alt="RE/MAX" style={{ width: '100%', height: 'auto', filter: 'drop-shadow(0 15px 35px rgba(0,0,0,0.3))' }} />
                 </motion.div>
@@ -198,9 +199,9 @@ export default function Hero() {
         .hero-inner-wrapper { x: var(--mouse-x, 0); y: var(--mouse-y, 0); }
 
         @media (max-width: 768px) {
-          #hero { padding-top: 90px !important; padding-bottom: 20px !important; }
-          .hero-grid-main { grid-template-columns: 1fr !important; gap: 10px !important; }
-          .hero-photo-col { order: -1; min-height: auto !important; padding-top: 0 !important; margin-bottom: 60px; }
+          #hero { padding-top: 80px !important; padding-bottom: 20px !important; }
+          .hero-grid-main { grid-template-columns: 1fr !important; gap: 0px !important; }
+          .hero-photo-col { order: -1; min-height: auto !important; padding-top: 0 !important; margin-bottom: 0px !important; }
           .hero-text-col  { order: 1; text-align: center; align-items: center; padding: 0 !important; }
           .hero-text-col h1 { font-size: 1.9rem !important; margin-bottom: 12px !important; line-height: 1.2 !important; }
           .hero-text-col p { font-size: 0.85rem !important; margin-left: auto; margin-right: auto; margin-bottom: 12px !important; display: none; }
